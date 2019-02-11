@@ -1,1 +1,1 @@
-from gym_soccer.envs.disaster_env import DisasterEnv
+from gym_disaster.envs.disaster_env import DisasterEnv

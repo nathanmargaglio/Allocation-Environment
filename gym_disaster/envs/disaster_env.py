@@ -9,24 +9,17 @@ logger = logging.getLogger(__name__)
 
 class DisasterEnv(gym.Env, utils.EzPickle):
     metadata = {'render.modes': []}
-
+    
     def __init__(self):
-        self.observation_space = spaces.Box(low=-1, high=1,
-                                            shape=(self.env.getStateSize()))
-        # Action space omits the Tackle/Catch actions, which are useful on defense
-        self.action_space = spaces.Tuple((spaces.Discrete(3),
-                                          spaces.Box(low=0, high=100, shape=1),
-                                          spaces.Box(low=-180, high=180, shape=1),
-                                          spaces.Box(low=-180, high=180, shape=1),
-                                          spaces.Box(low=0, high=100, shape=1),
-                                          spaces.Box(low=-180, high=180, shape=1)))
-
+        self.observation_space = spaces.Box(low=-1, high=1, shape=(1, ))
+        self.action_space = spaces.Tuple((spaces.Discrete(3), spaces.Box(low=0, high=100, shape=(1, ))))
+                                         
     def step(self, action):
         observation = None
         reward = None
         done = None
         info = {}
-        return ob, reward, done, info
+        return observation, reward, done, info
 
     def reset(self):
         observation = None
