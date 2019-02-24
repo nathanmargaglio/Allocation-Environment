@@ -1,6 +1,7 @@
-# Disaster-Allocation
+# Allocation-Optimizer
 
+To install, clone the repo, then
 ```bash
-cd Disaster-Allocation
+cd Allocation-Optimizer
 pip install -e .
 ```
